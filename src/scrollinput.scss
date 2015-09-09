@@ -1,0 +1,105 @@
+
+$chatinput-bg: #fff;
+$chatinput-font: "Lucida Console", Monaco, monospace;
+$chatinput-font-size: 12px;
+$chatinput-text: #000;
+$chatinput-input-border: #4f4f4f;
+$chatinput-min-width: 300px;
+$chatinput-width: 100%;
+$chatinput-height: 100%;
+$chatinput-min-height: 100px;
+$chatinput-textbox-height: 34px;
+$chatinput-button-bg: #ccc;
+$chatinput-button-hover-bg: #999;
+$chatinput-scroll-bar: #999;
+$chatinput-border: #ccc;
+$chatinput-border-size: 3px;
+$chatinput-text-output-bottom: 50px;
+
+@mixin custom-scroll($background, $thumb, $width){
+
+    &::-webkit-scrollbar{
+        width: $width;
+        background: $background;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $thumb;
+        -webkit-border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-corner{
+        background-color: $background;
+    }
+}
+
+.scroll-input{
+    background: $chatinput-bg;
+    color: $chatinput-text;
+    height: $chatinput-height;
+    min-height: $chatinput-min-height;
+    position: relative;
+    width: $chatinput-width;
+    min-width: $chatinput-min-width;
+    overflow: hidden;
+
+    .text-output{
+        @include custom-scroll(transparent, $chatinput-scroll-bar, 6px);
+        min-width: $chatinput-min-width;
+        font-family: $chatinput-font;
+        font-size: $chatinput-font-size;
+        position: absolute;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-right: 2px;
+        width: 100%;
+        top: 0;
+        bottom: $chatinput-text-output-bottom;
+    }
+
+    .text-input{
+        padding: 6px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+
+        .form-wrapper{
+            width: calc(100% - 20px);
+            display: block;
+            white-space: nowrap;
+            background: red;
+            border: $chatinput-border-size solid $chatinput-border;
+            border-radius: 6px;
+            overflow: hidden;
+
+            button {
+                overflow: visible;
+                outline: none;
+                position: relative;
+                float: left;
+                border: 0;
+                padding: 0;
+                height: $chatinput-textbox-height;
+                width: $chatinput-textbox-height;
+                cursor: pointer;
+                border-right: $chatinput-border-size solid $chatinput-border;
+                background: $chatinput-button-bg;
+
+                &:hover{
+                    background: $chatinput-button-hover-bg;
+                }
+            }
+
+            input {
+                left: 0;
+                padding: 0px 10px 0px 10px;
+                border: 0;
+                height: $chatinput-textbox-height;
+                font-size: $chatinput-font-size;
+                font-family: $chatinput-font;
+                outline: none;
+                width: 100%;
+            }
+        }
+    }
+}
