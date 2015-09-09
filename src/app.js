@@ -2,7 +2,7 @@
 var React = require('react');
 var ChatInput = require('./chatinput.jsx').ChatInput;
 
-require('./scrollinput.scss');
+require('./chatinput.scss');
 require('./index.html');
 
 var Demo = React.createClass({
