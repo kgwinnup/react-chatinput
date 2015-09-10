@@ -10,4 +10,5 @@ props:
            output={this.state.output}
            option={options}/>
 
-![chat](https://github.com/kgwinnup/react-chatinput/blob/master/chat.png)
+![chat1](https://github.com/kgwinnup/react-chatinput/blob/master/chat1.png)
+![chat2](https://github.com/kgwinnup/react-chatinput/blob/master/chat2.png)
