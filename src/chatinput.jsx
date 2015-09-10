@@ -61,7 +61,7 @@ var TextInput = React.createClass({
 
                 <form className='form-wrapper' onSubmit={this._onEnter}>
                     <button type='button' onMouseDown={this._onMouseDown} ref='button'>+</button>
-                    <input type='text' ref='textinput' />
+                    <input type='text' ref='textinput' onFocus={this.props.hideOptions} />
                 </form>
 
             </div>
