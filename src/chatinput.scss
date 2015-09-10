@@ -111,5 +111,6 @@ $chatinput-options-box-bg: #fff;
         background: $chatinput-options-box-bg;
         width: $chatinput-options-box-size;
         box-shadow: 0.5px 0.5px 6px #888888;
+        z-index: 2;
     }
 }
