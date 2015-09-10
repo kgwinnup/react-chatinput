@@ -49,7 +49,7 @@ var TextInput = React.createClass({
 
     // show/hide options box
     _onMouseDown: function(event){
-        this.props.onMouseDownButton();
+        this.props.toggleOptions();
     },
 
     render: function(){
@@ -113,13 +113,13 @@ exports.ChatInput = React.createClass({
         }
     },
 
-    _onMouseClick: function(){
+    _hideOptions: function(){
         this.setState({
             showOptions: false
         });
     },
 
-    _onMouseDownButton: function(){
+    _toggleOptions: function(){
         this.setState({
             showOptions: !this.state.showOptions
         });
@@ -129,10 +129,11 @@ exports.ChatInput = React.createClass({
 
         return (
             <div className='scroll-input'>
-                <TextOutput lines={this.props.output} onClick={this._onMouseClick} />
+                <TextOutput lines={this.props.output} onClick={this._hideOptions} />
                 <TextInput showOptions={this.state.showOptions}
                            onEnter={this.props.onEnter}
-                           onMouseDownButton={this._onMouseDownButton}
+                           toggleOptions={this._toggleOptions}
+                           hideOptions={this._hideOptions}
                            option={this.props.option} />
             </div>
         );
