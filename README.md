@@ -4,8 +4,10 @@ props:
 
 + output - is a list of something to be displayed. Can be strings or another react component.
 + onEnter - this is the function that takes receives the input on submit or enter.   
++ options - list of special options to display when the '+' button is clicked
 
-
-<ChatInput onEnter={this._onEnter} output={this.state.output} />
+<ChatInput onEnter={this._onEnter}
+           output={this.state.output}
+           option={options}/>
 
 ![chat](https://github.com/kgwinnup/react-chatinput/blob/master/chat.png)

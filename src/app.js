@@ -21,8 +21,12 @@ var Demo = React.createClass({
 
     render: function(){
 
+        var options = ['option 1', 'option 2'];
+
         return(
-            <ChatInput onEnter={this._onEnter} output={this.state.output} />
+            <ChatInput onEnter={this._onEnter}
+                       output={this.state.output}
+                       option={options}/>
         )
     }
 });
